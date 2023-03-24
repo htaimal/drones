@@ -7,5 +7,6 @@ import java.util.List;
 
 
 public interface MedicationRepository extends JpaRepository<Medication, Integer> {
+    List<Medication> findByIdIn(List<Integer> ids);
 
 }

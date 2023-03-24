@@ -34,6 +34,12 @@ public class MedicationServiceImpl implements MedicationService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<MedicationDTO> getMedicationsByIds(List<Integer> medicationIds) {
+        List<Medication> medications = medicationRepository.findByIdIn(medicationIds);
+        return medications.stream().map(medication -> modelMapper.map(medication, MedicationDTO.class))
+                .collect(Collectors.toList());
+    }
 
 
 }

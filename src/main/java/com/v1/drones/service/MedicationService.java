@@ -9,4 +9,5 @@ public interface MedicationService {
     List<MedicationDTO> getAll();
 
 
+    List<MedicationDTO> getMedicationsByIds(List<Integer> medicationIds);
 }
