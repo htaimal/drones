@@ -20,12 +20,14 @@ public class Medication {
     private Integer id;
 
     @Column(name = "NAME", nullable = false)
+    @Pattern(regexp = "^[a-zA-Z0-9_-]*$", message = "Invalid characters in field")
     private String name;
 
     @Column(name = "WEIGHT", nullable = false)
     private Integer weight;
 
     @Column(name = "CODE", nullable = false)
+    @Pattern(regexp = "^[A-Z0-9_]*$", message = "Invalid characters in field")
     private String code;
 
     @Column(name = "IMAGE_URL", nullable = false)
